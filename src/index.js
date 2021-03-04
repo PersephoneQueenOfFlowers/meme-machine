@@ -82,12 +82,21 @@ window.onload = function () {
   
   img.onload = function () {
     // Work out where to center it
-    x = canvas.width / 2 - img.width / 2;
-    y = canvas.height / 2 - img.height / 2;
-    
+    // x = canvas.width / 2 - img.width / 2;
+    // y = canvas.height / 2 - img.height / 2;
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    // const scale = Math.min(canvas.width / w, canvas.height / h);
+    // ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
+
+    const scale = Math.max(canvas.width / w, canvas.height / h);
+
+    let x = (canvas.width / 2) - (w / 2) * scale;
+    let y = (canvas.height / 2) - (h / 2) * scale;
     // Draw it
-    ctx.drawImage(img, x, y);
-    zeroOut();
+    ctx.drawImage(img, x, y, w * scale, h * scale );
+    // zeroOut();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
   }
   
   function loadImage(e) {
@@ -123,12 +132,16 @@ window.onload = function () {
     // Reverse the earlier translation
     ctx.translate(-canvas.width / 2, -canvas.height / 2);
 
-    // Finally, draw the image
-    let hRatio = canvas.width / img.width;
-    let vRatio = canvas.height / img.height;
-    let ratio = Math.min(hRatio, vRatio);
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
 
-    ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+    const scale = Math.max(canvas.width / w, canvas.height / h);
+
+    let x = (canvas.width / 2) - (w / 2);
+    let y = (canvas.height / 2) - (h / 2);
+    // Draw it
+
+    ctx.drawImage(img, x, y, img.width, img.height);
     ctx.restore();
 
   }
@@ -144,7 +157,7 @@ window.onload = function () {
       let line = '';
 
       context.lineWidth = 5;
-      context.font = '44px courier';
+      context.font = '44px Myriad Pro';
       context.strokeStyle = 'black';
       context.fillStyle = 'white';
       context.textAlign = 'center';
@@ -168,9 +181,6 @@ window.onload = function () {
       context.strokeText(line.slice(0, -1), x, y);
       context.fillText(line.slice(0, -1), x, y);
     }
-
-    /*the canvas context is a player for outside the functions 
-    declared outside them and available, but not global :) */
 
     let text = document.getElementById('custom-text').value;
 
