@@ -124,9 +124,9 @@ window.onload = function () {
     ctx.translate(-canvas.width / 2, -canvas.height / 2);
 
     // Finally, draw the image
-    let hRatio = canvas.width / img.width;
-    let vRatio = canvas.height / img.height;
-    let ratio = Math.min(hRatio, vRatio);
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.min(hRatio, vRatio);
 
     ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
     ctx.restore();
@@ -140,8 +140,8 @@ window.onload = function () {
     doTransform();
 
     function wrapText(context, text, x, y, maxWidth, lineHeight) {
-      let words = text.split(' ');
-      let line = '';
+      var words = text.split(' ');
+      var line = '';
 
       context.lineWidth = 5;
       context.font = '44px courier';
@@ -151,10 +151,10 @@ window.onload = function () {
       context.textBaseline = 'middle';
       context.lineJoin = 'round';
 
-      for (let n = 0; n < words.length; n++) {
-        let testLine = line + words[n] + ' ';
-        let metrics = context.measureText(testLine);
-        let testWidth = metrics.width;
+      for (var n = 0; n < words.length; n++) {
+        var testLine = line + words[n] + ' ';
+        var metrics = context.measureText(testLine);
+        var testWidth = metrics.width;
         if (testWidth > maxWidth && n > 0) {
           context.strokeText(line.slice(0, -1), x, y);
           context.fillText(line.slice(0, -1), x, y);
@@ -172,7 +172,7 @@ window.onload = function () {
     /*the canvas context is a player for outside the functions 
     declared outside them and available, but not global :) */
 
-    let text = document.getElementById('custom-text').value;
+    var text = document.getElementById('custom-text').value;
 
     // Set the text style
     text = text.toUpperCase();
@@ -195,7 +195,7 @@ window.onload = function () {
     ctx.translate(canvas.width / 2, canvas.height / 2);
 
     // Perform scale
-    let val = document.getElementById('scale').value;
+    var val = document.getElementById('scale').value;
     ctx.scale(val, val);
 
     // Perform rotation
