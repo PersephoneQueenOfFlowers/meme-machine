@@ -1,0 +1,36 @@
+.hidden, #camera {
+  display: none; }
+
+body {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: #4b4463;
+  font-family: 'Fira Sans', sans-serif; }
+  body .page-container {
+    width: 60%;
+    margin: 5% auto;
+    background: #e5e5e8;
+    box-sizing: border-box;
+    padding: 0 3% 3%;
+    border: darkgray;
+    border-radius: 5px; }
+    body .page-container .meme-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 5%; }
+      body .page-container .meme-container .hero .subheading {
+        list-style-type: none; }
+      body .page-container .meme-container #canvas-container {
+        position: relative;
+        background-image: url("../images/camera.png");
+        background-repeat: no-repeat;
+        background-size: cover; }
+        body .page-container .meme-container #canvas-container #camera {
+          position: absolute;
+          left: 25%;
+          top: 20%; }
