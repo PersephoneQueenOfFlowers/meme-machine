@@ -21,16 +21,16 @@ window.onload = function () {
       dt,
       previewCounter = 0;
 
-      //hide all controls but first 
-      for (let i = 0; i < control.length; i++) {
-        control[i].classList.add('hidden');
-      }
-      // get other controls by ID to show when that step 
-      const uploads = document.querySelector("#upload-container");
-      const scaleZoom = document.querySelector("#scale-zoom-container");
-      const textAdd = document.querySelector("#text-container");
-      const downloads = document.querySelector("#dl-container");
-      uploads.classList.toggle("hidden");
+  //hide all controls but first 
+  for (let i = 0; i < control.length; i++) {
+    control[i].classList.add('hidden');
+  }
+  // get other controls by ID to show when that step is happening.
+  const uploads = document.querySelector("#upload-container");
+  const scaleZoom = document.querySelector("#scale-zoom-container");
+  const textAdd = document.querySelector("#text-container");
+  const downloads = document.querySelector("#dl-container");
+  uploads.classList.toggle("hidden");
 
 
   /***************(set context text characteristics)************/
@@ -78,6 +78,7 @@ window.onload = function () {
 
   let img = new Image();
   img.crossOrigin = "Anonymous";
+  // img.src = '../dist/images/camera.png';
   
   img.onload = function () {
 
