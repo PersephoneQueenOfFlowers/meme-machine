@@ -78,16 +78,11 @@ window.onload = function () {
 
   let img = new Image();
   img.crossOrigin = "Anonymous";
-  // img.src = '../dist/images/camera.png';
   
   img.onload = function () {
-    // Work out where to center it
-    // x = canvas.width / 2 - img.width / 2;
-    // y = canvas.height / 2 - img.height / 2;
+
     const w = img.naturalWidth;
     const h = img.naturalHeight;
-    // const scale = Math.min(canvas.width / w, canvas.height / h);
-    // ctx.setTransform(scale, 0, 0, scale, canvas.width / 2, canvas.height / 2);
 
     const scale = Math.max(canvas.width / w, canvas.height / h);
 
@@ -95,7 +90,6 @@ window.onload = function () {
     let y = (canvas.height / 2) - (h / 2) * scale;
     // Draw it
     ctx.drawImage(img, x, y, w * scale, h * scale );
-    // zeroOut();
     ctx.setTransform(1, 0, 0, 1, 0, 0);
   }
   
@@ -188,39 +182,8 @@ window.onload = function () {
     text = text.toUpperCase();
     x = canvas.width / 2;
     y = 100;
-    // ctx.strokeText(text, x, y);
-    // ctx.fillText(text, x, y);
     wrapText(ctx, text, x, y, 500, 40);
 
-  }
-
-
-  function zeroOut() {
-    //made a button to zero the scale and rotate, can bring back
-    ctx.save();
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Translate to center so transformations will apply around this point
-    ctx.translate(canvas.width / 2, canvas.height / 2);
-
-    // Perform scale
-    let val = document.getElementById('scale').value;
-    ctx.scale(val, val);
-
-    // Perform rotation
-    ctx.rotate(0);
-
-    // Reverse the earlier translation
-    ctx.translate(-canvas.width / 2, -canvas.height / 2);
-
-    // Finally, draw the image
-    let hRatio = canvas.width / img.width;
-    let vRatio = canvas.height / img.height;
-    let ratio = Math.min(hRatio, vRatio);
-
-    ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
-    ctx.restore();
   }
 
   function previewCanvas() {
