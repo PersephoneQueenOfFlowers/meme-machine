@@ -27,7 +27,7 @@ body {
         list-style-type: none; }
       body .page-container .meme-container #canvas-container {
         position: relative;
-        background-image: url("../images/camera.png");
+        background-image: url("../dist/images/camera.png");
         background-repeat: no-repeat;
         background-size: cover; }
         body .page-container .meme-container #canvas-container #camera {
