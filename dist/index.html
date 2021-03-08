@@ -28,22 +28,24 @@
               <div class="controls">
                 <!-- <span id='val'></span> -->
                 <div class="control" id="upload-container">
-                  <span id='button' class="shift stop-left">Upload image</span>              
-                  <input class="item" class="btn-default badge btn-secondary" type="file" id="imageLoader" name="imageLoader" />
+                  <div class="label">Upload image</div>
+                    <!-- <span class="button" id="imageLoader">Choose File -->
+                      <input class="item invisible" type="file" id="imageLoader" name="imageLoader" />
+                  <!-- </span> -->
                 </div>
                 <div class="control" id="scale-zoom-container">
-                  <div class="scrubber hide">
+                  <div>
                     <label class="label" for="scale">ZOOM:</label>
                     <input id="scale" max="1.25" min="0.1" step="0.00001" type="range" value="1" />
                   </div>
-                  <div class="scrubber hide last">
+                  <div>
                     <label class="label" for="rotate">ROTATE:</label><input id="rotate" max="180" min="-180" step="1" type="range"
                       value="0" />
                   </div>
                   <span id='done-scale-zoom' class="shift stop-left">Done</span>
                 </div>
                 <div class="control" id="text-container">
-                  <input id="custom-text" type="text" placeholder="fill in the words for your meme" maxlength="25" />
+                  <input id="custom-text" type="text" placeholder="up to 25 chars" maxlength="25" />
                   <span id='done-text' class="shift stop-left">Done</span>
                 </div>
 
