@@ -7,7 +7,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #393433;
+  background-color: #ebebeb;
   font-family: 'Fira Sans', sans-serif; }
   body .page-container {
     width: 60%;
@@ -17,13 +17,17 @@ body {
     padding: 0 3% 3%;
     border: darkgray;
     border-radius: 5px;
-    border: 3px solid #181716; }
+    border: 3px solid #181716;
+    box-shadow: 5px 5px 9px #666; }
     body .page-container .meme-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       box-sizing: border-box;
       padding: 5%; }
+      body .page-container .meme-container .hero h1 {
+        background: radial-gradient(circle, #1089ea 3%, rgba(10, 149, 95, 0.368785) 40%);
+        background-position-x: -74px; }
       body .page-container .meme-container .hero .subheading {
         list-style-type: none; }
       body .page-container .meme-container #canvas-container {
