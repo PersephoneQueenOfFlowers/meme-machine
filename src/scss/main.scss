@@ -111,7 +111,7 @@ body{
     max-width: 126px;
   }
   .invisible::before {
-    content: 'Select some files';
+    content: 'Select .jpg or .png';
     display: inline-block;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
     border: 1px solid #999;
