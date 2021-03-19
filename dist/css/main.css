@@ -80,7 +80,7 @@ body {
   body .invisible::-webkit-file-upload-button {
     visibility: hidden; }
   body .invisible {
-    max-width: 126px; }
+    max-width: 150px; }
   body .invisible::before {
     content: 'Select .jpg or .png';
     display: inline-block;
